@@ -74,16 +74,16 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 
 ---
 
-## 2. Mensagens de Erro
+## 2. Mensagens de Erro de autenticação
 
 ### TC-007: Erro - Acesso Direto Restrito
 * **Nome:** Tentativa de acesso a página interna sem autenticação.
 * **Objetivo:** Validar a segurança e mensagem de erro ao tentar burlar o login via URL.
-* **Pré-requisitos:** Usuário não autenticado.
+* **Pré-requisitos:** Não ter realizado o login ainda ou ter realizado o logout.
 * **Ações:**
     1. Tentar acessar diretamente `https://www.saucedemo.com/inventory.html`.
 * **Resultado:** Redirecionamento para o login com a mensagem: "You can only access '${location.state.from.pathname}' when you are logged in."
-* **Evidência:** `[screenshot-tc007-acesso-indireto.png]`
+* **Evidência:** ![Acesso Direto Restito](../Evidences/Images/screenshot-tc007-acesso-indireto.png)
 
 ### TC-008: Erro - Usuário Ausente
 * **Nome:** Validação de campo "Username" obrigatório.
@@ -94,7 +94,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Preencher Password com `secret_sauce`.
     3. Clicar em "Login".
 * **Resultado:** Exibição da mensagem: "Epic sadface: Username is required".
-* **Evidência:** `[screenshot-tc008-user-required.png]`
+* **Evidência:** ![Usuário Ausente](../Evidences/Images/screenshot-tc008-user-required.png)
 
 ### TC-009: Erro - Senha Ausente
 * **Nome:** Validação de campo "Password" obrigatório.
@@ -105,7 +105,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Deixar Password vazio.
     3. Clicar em "Login".
 * **Resultado:** Exibição da mensagem: "Epic sadface: Password is required".
-* **Evidência:** `[screenshot-tc009-pass-required.png]`
+* **Evidência:** ![Senha Ausente](../Evidences/Images/screenshot-tc009-pass-required.png)
 
 ### TC-010: Erro - Credenciais Inválidas
 * **Nome:** Tentativa de login com dados incorretos.
@@ -115,7 +115,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     1. Inserir usuário inexistente ou senha incorreta.
     2. Clicar em "Login".
 * **Resultado:** Exibição da mensagem: "Epic sadface: Username and password do not match any user in this service".
-* **Evidência:** `[screenshot-tc010-invalid-creds.png]`
+* **Evidência:** ![Credenciais Inválidas](../Evidences/Images/screenshot-tc010-invalid-creds.png)
 
 ---
 
@@ -132,7 +132,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     4. **Informações:** Preencher First Name, Last Name e Zip Code. Clicar em "Continue".
     5. **Confirmação:** Na página "Checkout: Overview", clicar em "Finish".
 * **Resultado:** Exibição da **Tela Final** com a mensagem "Thank you for your order!".
-* **Evidência:** `[video-tc011-compra-completa.mp4]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc011-compra-completa.mp4" controls></video>
 
 ---
 
@@ -168,6 +168,26 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Evidência:** `[screenshot-tc014-detalhes.png]`
 
 ### TC-015: Navegação e Logout
+* **Nome:** Logout do sistema.
+* **Objetivo:** Validar o encerramento da sessão.
+* **Pré-requisitos:** Usuário logado.
+* **Ações:**
+    1. Clicar no menu lateral (hambúrguer).
+    2. Clicar em "Logout".
+* **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
+* **Evidência:** `[screenshot-tc015-logout.png]`
+
+### TC-016: Responsividade Mobile-Friendly
+* **Nome:** Logout do sistema.
+* **Objetivo:** Validar o encerramento da sessão.
+* **Pré-requisitos:** Usuário logado.
+* **Ações:**
+    1. Clicar no menu lateral (hambúrguer).
+    2. Clicar em "Logout".
+* **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
+* **Evidência:** `[screenshot-tc015-logout.png]`
+
+### TC-017: Teste de acessibilidade
 * **Nome:** Logout do sistema.
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
