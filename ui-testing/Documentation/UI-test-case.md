@@ -15,7 +15,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar no botão "Login".
 * **Resultado:** O sistema deve redirecionar para a página de inventário (`/inventory.html`) exibindo a lista de produtos.
-* **Evidência:** `[screenshot-tc001-login-sucesso.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc001-login-sucesso.mp4" controls></video>
 
 ### TC-002: Login - locked_out_user
 * **Nome:** Login com usuário bloqueado.
@@ -26,7 +26,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
 * **Resultado:** O acesso deve ser negado e a mensagem "Epic sadface: Sorry, this user has been locked out." deve ser exibida.
-* **Evidência:** `[screenshot-tc002-login-bloqueado.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc002-locked-ou.mp4" controls></video>
 
 ### TC-003: Login - problem_user
 * **Nome:** Login com usuário com problemas visuais/funcionais.
@@ -37,7 +37,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
 * **Resultado:** O login é realizado, mas os produtos devem apresentar imagens idênticas (bug proposital) e funcionalidades de filtro podem falhar.
-* **Evidência:** `[screenshot-tc003-problem-user.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc003-problem-user.mp4" controls></video>
 
 ### TC-004: Login - performance_glitch_user
 * **Nome:** Login com usuário com atraso de performance.
@@ -48,7 +48,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
 * **Resultado:** O login deve ocorrer com sucesso, porém com um atraso perceptível (ex: 5 segundos) no carregamento da página de produtos.
-* **Evidência:** `[video-tc004-performance-delay.mp4]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc004-performance-delay.mp4" controls></video>
 
 ### TC-005: Login - error_user
 * **Nome:** Login com usuário de erro.
@@ -59,7 +59,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
 * **Resultado:** Login realizado, mas certas interações (como clicar em "Add to Cart") devem falhar ou gerar erros inesperados.
-* **Evidência:** `[screenshot-tc005-error-user.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc005-error-user.mp4" controls></video>
 
 ### TC-006: Login - visual_user
 * **Nome:** Login com usuário visualmente inconsistente.
@@ -70,7 +70,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
 * **Resultado:** Login realizado, mas elementos de interface (como botões e textos) podem estar desalinhados.
-* **Evidência:** `[screenshot-tc006-visual-inconsistency.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc006-visual.mp4" controls></video>
 
 ---
 
@@ -117,11 +117,41 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Resultado:** Exibição da mensagem: "Epic sadface: Username and password do not match any user in this service".
 * **Evidência:** ![Credenciais Inválidas](../Evidences/Images/screenshot-tc010-invalid-creds.png)
 
+### TC-011: Erro - Primeiro Nome Obrigatório
+* **Nome:** Tentativa de login com dados incorretos.
+* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Pré-requisitos:** Estar na página de login.
+* **Ações:**
+    1. Inserir usuário inexistente ou senha incorreta.
+    2. Clicar em "Login".
+* **Resultado:** Exibição da mensagem: "Epic sadface: Username and password do not match any user in this service".
+* **Evidência:** ![Nome Obrigatório](../Evidences/Images/screenshot-tc011-first-name-required.png)
+
+### TC-012: Erro - Sobrenome Obrigatório
+* **Nome:** Tentativa de login com dados incorretos.
+* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Pré-requisitos:** Estar na página de login.
+* **Ações:**
+    1. Inserir usuário inexistente ou senha incorreta.
+    2. Clicar em "Login".
+* **Resultado:** Exibição da mensagem: "Epic sadface: Username and password do not match any user in this service".
+* **Evidência:** ![Sobrenome Obrigatório](../Evidences/Images/screenshot-tc012-last-name-required.png)
+
+### TC-013: Erro - Código Postal Obrigatório
+* **Nome:** Tentativa de login com dados incorretos.
+* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Pré-requisitos:** Estar na página de login.
+* **Ações:**
+    1. Inserir usuário inexistente ou senha incorreta.
+    2. Clicar em "Login".
+* **Resultado:** Exibição da mensagem: "Epic sadface: Username and password do not match any user in this service".
+* **Evidência:** ![Código Postal Obrigatório](../Evidences/Images/screenshot-tc013-zip-code-required.png)
+
 ---
 
 ## 3. Fluxo de Compra Básico
 
-### TC-011: Fluxo de Compra Completo
+### TC-014: Fluxo de Compra Completo
 * **Nome:** Realizar compra com sucesso.
 * **Objetivo:** Validar o ciclo de vida completo de uma venda no e-commerce.
 * **Pré-requisitos:** Usuário logado (`standard_user`).
@@ -132,23 +162,40 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     4. **Informações:** Preencher First Name, Last Name e Zip Code. Clicar em "Continue".
     5. **Confirmação:** Na página "Checkout: Overview", clicar em "Finish".
 * **Resultado:** Exibição da **Tela Final** com a mensagem "Thank you for your order!".
-* **Evidência:** <video src="../Evidences/Videos/video-tc011-compra-completa.mp4" controls></video>
+* **Evidência:** <video src="../Evidences/Videos/video-tc014-compra-completa.mp4" controls></video>
+
+### TC-015: Fluxo de Compra Completo
+* **Nome:** Realizar compra com sucesso.
+* **Objetivo:** Validar o ciclo de vida completo de uma venda no e-commerce.
+* **Pré-requisitos:** Usuário logado (`standard_user`).
+* **Ações:**
+    1. **Adicionar ao carrinho:** Clicar em "Add to cart" no produto "Sauce Labs Backpack".
+    2. **Carrinho:** Clicar no ícone do carrinho no topo superior direito.
+    3. **Checkout:** Na página do carrinho, clicar em "Checkout".
+    4. **Informações:** Preencher First Name, Last Name e Zip Code. Clicar em "Continue".
+    5. **Confirmação:** Na página "Checkout: Overview", clicar em "Finish".
+* **Resultado:** A interface permite que o fluxo de compra seja realizado mesmo com o carrinho vazio".
+* **Evidência:** <video src="../Evidences/Videos/video-tc015-carrinho-vazio-completa.mp4" controls></video>
 
 ---
 
 ## 4. Funções Adicionais
 
-### TC-012: Remoção de Produto
+### TC-016: Remoção de Produto
 * **Nome:** Remover item do carrinho.
 * **Objetivo:** Validar que o usuário pode desistir de um item.
 * **Pré-requisitos:** Produto adicionado ao carrinho.
 * **Ações:**
     1. Acessar o carrinho.
     2. Clicar no botão "Remove" ao lado do produto.
-* **Resultado:** O item deve ser removido da lista e o contador do ícone do carrinho deve ser atualizado.
-* **Evidência:** `[screenshot-tc012-remocao.png]`
 
-### TC-013: Filtro de Produtos
+    ou
+
+    1. Clicar novamente em "Remove" na página de inventário para o mesmo produto.
+* **Resultado:** O item deve ser removido da lista e o contador do ícone do carrinho deve ser atualizado.
+* **Evidência:** `[screenshot-tc015-remocao.png]`
+
+### TC-016: Filtro de Produtos
 * **Nome:** Filtragem de preços.
 * **Objetivo:** Validar a ordenação dos produtos por preço.
 * **Pré-requisitos:** Estar na página de inventário.
@@ -156,18 +203,18 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     1. Clicar no menu suspenso de filtro (top right).
     2. Selecionar "Price (low to high)".
 * **Resultado:** Os produtos devem ser reordenados exibindo os menores valores primeiro.
-* **Evidência:** `[screenshot-tc013-filtro.png]`
+* **Evidência:** `[screenshot-tc016-filtro.png]`
 
-### TC-014: Visão Detalhada do Produto
+### TC-017: Visão Detalhada do Produto
 * **Nome:** Ampliar visão/detalhes do produto.
 * **Objetivo:** Validar a navegação para a página de detalhes de um item.
 * **Pré-requisitos:** Estar na página de inventário.
 * **Ações:**
     1. Clicar no nome ou na imagem do produto "Sauce Labs Bolt T-Shirt".
 * **Resultado:** Abertura da página específica do produto com descrição detalhada, imagem ampliada e preço.
-* **Evidência:** `[screenshot-tc014-detalhes.png]`
+* **Evidência:** `[screenshot-tc017-detalhes.png]`
 
-### TC-015: Navegação e Logout
+### TC-018: Navegação e Logout
 * **Nome:** Logout do sistema.
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
@@ -175,9 +222,9 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     1. Clicar no menu lateral (hambúrguer).
     2. Clicar em "Logout".
 * **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
-* **Evidência:** `[screenshot-tc015-logout.png]`
+* **Evidência:** `[screenshot-tc018-logout.png]`
 
-### TC-016: Responsividade Mobile-Friendly
+### TC-019: Responsividade Mobile-Friendly
 * **Nome:** Logout do sistema.
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
@@ -185,9 +232,9 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     1. Clicar no menu lateral (hambúrguer).
     2. Clicar em "Logout".
 * **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
-* **Evidência:** `[screenshot-tc015-logout.png]`
+* **Evidência:** `[screenshot-tc019-logout.png]`
 
-### TC-017: Teste de acessibilidade
+### TC-020: Teste de acessibilidade
 * **Nome:** Logout do sistema.
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
@@ -195,4 +242,4 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     1. Clicar no menu lateral (hambúrguer).
     2. Clicar em "Logout".
 * **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
-* **Evidência:** `[screenshot-tc015-logout.png]`
+* **Evidência:** `[screenshot-tc020-logout.png]`
