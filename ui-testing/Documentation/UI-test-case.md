@@ -30,18 +30,18 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 
 ### TC-003: Login - problem_user
 * **Nome:** Login com usuário com problemas visuais/funcionais.
-* **Objetivo:** Verificar o comportamento do sistema quando logado com um perfil que apresenta falhas propositais (ex: imagens trocadas).
+* **Objetivo:** Verificar se o usuário `problem_user` pode ser acessado normalmente. 
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir `problem_user` no campo Username.
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
-* **Resultado:** O login é realizado, mas os produtos devem apresentar imagens idênticas (bug proposital) e funcionalidades de filtro podem falhar.
+* **Resultado:** O sistema deve redirecionar para a página de inventário (`/inventory.html`) exibindo a lista de produtos.
 * **Evidência:** <video src="../Evidences/Videos/video-tc003-problem-user.mp4" controls></video>
 
 ### TC-004: Login - performance_glitch_user
 * **Nome:** Login com usuário com atraso de performance.
-* **Objetivo:** Validar o carregamento da página sob condições de latência.
+* **Objetivo:** Validar o carregamento da página sob condições de latência (intencional).
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir `performance_glitch_user` no campo Username.
@@ -52,24 +52,24 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 
 ### TC-005: Login - error_user
 * **Nome:** Login com usuário de erro.
-* **Objetivo:** Validar falhas específicas de UI ao tentar interagir com elementos (ex: adicionar ao carrinho).
+* **Objetivo:** Verificar se o usuário `error-user` pode ser acessado normalmente.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir `error_user` no campo Username.
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
-* **Resultado:** Login realizado, mas certas interações (como clicar em "Add to Cart") devem falhar ou gerar erros inesperados.
+* **Resultado:** O sistema deve redirecionar para a página de inventário (`/inventory.html`) exibindo a lista de produtos.
 * **Evidência:** <video src="../Evidences/Videos/video-tc005-error-user.mp4" controls></video>
 
 ### TC-006: Login - visual_user
 * **Nome:** Login com usuário visualmente inconsistente.
-* **Objetivo:** Validar inconsistências de layout e alinhamento de componentes.
+* **Objetivo:** Verificar se o usuário `visual_user` pode ser acessado normalmente.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir `visual_user` no campo Username.
     2. Inserir `secret_sauce` no campo Password.
     3. Clicar em "Login".
-* **Resultado:** Login realizado, mas elementos de interface (como botões e textos) podem estar desalinhados.
+* **Resultado:** O sistema deve redirecionar para a página de inventário (`/inventory.html`) exibindo a lista de produtos.
 * **Evidência:** <video src="../Evidences/Videos/video-tc006-visual.mp4" controls></video>
 
 ---
@@ -193,28 +193,29 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 
     1. Clicar novamente em "Remove" na página de inventário para o mesmo produto.
 * **Resultado:** O item deve ser removido da lista e o contador do ícone do carrinho deve ser atualizado.
-* **Evidência:** `[screenshot-tc015-remocao.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc016-remocao.mp4" controls></video>
 
-### TC-016: Filtro de Produtos
+### TC-017: Filtro de Produtos
 * **Nome:** Filtragem de preços.
 * **Objetivo:** Validar a ordenação dos produtos por preço.
 * **Pré-requisitos:** Estar na página de inventário.
 * **Ações:**
     1. Clicar no menu suspenso de filtro (top right).
-    2. Selecionar "Price (low to high)".
+    2. Selecionar uma das opções de filtro.
+    3. Repetir com todas as opções de filtro
 * **Resultado:** Os produtos devem ser reordenados exibindo os menores valores primeiro.
-* **Evidência:** `[screenshot-tc016-filtro.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc017-filtro..mp4" controls></video>
 
-### TC-017: Visão Detalhada do Produto
+### TC-018: Visão Detalhada do Produto
 * **Nome:** Ampliar visão/detalhes do produto.
 * **Objetivo:** Validar a navegação para a página de detalhes de um item.
 * **Pré-requisitos:** Estar na página de inventário.
 * **Ações:**
     1. Clicar no nome ou na imagem do produto "Sauce Labs Bolt T-Shirt".
 * **Resultado:** Abertura da página específica do produto com descrição detalhada, imagem ampliada e preço.
-* **Evidência:** `[screenshot-tc017-detalhes.png]`
+* **Evidência:** ![detalhes](../Evidences/Images/screenshot-tc018-detalhes.png)
 
-### TC-018: Navegação e Logout
+### TC-019: Navegação e Logout
 * **Nome:** Logout do sistema.
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
@@ -222,24 +223,14 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
     1. Clicar no menu lateral (hambúrguer).
     2. Clicar em "Logout".
 * **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
-* **Evidência:** `[screenshot-tc018-logout.png]`
+* **Evidência:** <video src="../Evidences/Videos/video-tc019-logout.mp4" controls></video>
 
-### TC-019: Responsividade Mobile-Friendly
+### TC-020: Responsividade Mobile-Friendly
 * **Nome:** Logout do sistema.
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
 * **Ações:**
-    1. Clicar no menu lateral (hambúrguer).
-    2. Clicar em "Logout".
-* **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
-* **Evidência:** `[screenshot-tc019-logout.png]`
-
-### TC-020: Teste de acessibilidade
-* **Nome:** Logout do sistema.
-* **Objetivo:** Validar o encerramento da sessão.
-* **Pré-requisitos:** Usuário logado.
-* **Ações:**
-    1. Clicar no menu lateral (hambúrguer).
-    2. Clicar em "Logout".
-* **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
-* **Evidência:** `[screenshot-tc020-logout.png]`
+    1. Acessar a interface de usuário através de um dispositivo mobile.
+    2. Reproduzir o fluxo de compra semelhante ao TC-014.
+* **Resultado:** O usuário deve ser capaz de realizar as funções básicas de compra em dispositivos mobile.
+* **Evidência:**  <video src="../Evidences/Videos/video-tc020-mobile.mp4" controls></video>
