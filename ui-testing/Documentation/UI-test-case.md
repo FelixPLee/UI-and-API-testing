@@ -63,7 +63,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 
 ### TC-006: Login - visual_user
 * **Nome:** Login com usuário visualmente inconsistente.
-* **Objetivo:** Verificar se o usuário `visual_user` pode ser acessado normalmente.
+* **Objetivo:** Verificar se o usuário `problem_user` pode ser acessado normalmente.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir `visual_user` no campo Username.
@@ -109,7 +109,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 
 ### TC-010: Erro - Credenciais Inválidas
 * **Nome:** Tentativa de login com dados incorretos.
-* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Objetivo:** Validar a mensagem de erro de credenciais.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir usuário inexistente ou senha incorreta.
@@ -118,8 +118,8 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Evidência:** ![Credenciais Inválidas](../Evidences/Images/screenshot-tc010-invalid-creds.png)
 
 ### TC-011: Erro - Primeiro Nome Obrigatório
-* **Nome:** Tentativa de login com dados incorretos.
-* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Nome:** Tentativa de checkout sem nome.
+* **Objetivo:** Validar a mensagem de erro de ausência de nome.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir usuário inexistente ou senha incorreta.
@@ -128,8 +128,8 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Evidência:** ![Nome Obrigatório](../Evidences/Images/screenshot-tc011-first-name-required.png)
 
 ### TC-012: Erro - Sobrenome Obrigatório
-* **Nome:** Tentativa de login com dados incorretos.
-* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Nome:** Tentativa de checkout sem sobrenome.
+* **Objetivo:** Validar a mensagem de erro de ausência de sobrenome.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir usuário inexistente ou senha incorreta.
@@ -138,8 +138,8 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Evidência:** ![Sobrenome Obrigatório](../Evidences/Images/screenshot-tc012-last-name-required.png)
 
 ### TC-013: Erro - Código Postal Obrigatório
-* **Nome:** Tentativa de login com dados incorretos.
-* **Objetivo:** Validar a mensagem genérica de erro de credenciais.
+* **Nome:** Tentativa de checkout sem código postal.
+* **Objetivo:** Validar a mensagem de erro de código postal.
 * **Pré-requisitos:** Estar na página de login.
 * **Ações:**
     1. Inserir usuário inexistente ou senha incorreta.
@@ -165,11 +165,10 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Evidência:** <video src="../Evidences/Videos/video-tc014-compra-completa.mp4" controls></video>
 
 ### TC-015: Fluxo de Compra Completo
-* **Nome:** Realizar compra com sucesso.
+* **Nome:** Realizar compra vazia.
 * **Objetivo:** Validar o ciclo de vida completo de uma venda no e-commerce.
 * **Pré-requisitos:** Usuário logado (`standard_user`).
 * **Ações:**
-    1. **Adicionar ao carrinho:** Clicar em "Add to cart" no produto "Sauce Labs Backpack".
     2. **Carrinho:** Clicar no ícone do carrinho no topo superior direito.
     3. **Checkout:** Na página do carrinho, clicar em "Checkout".
     4. **Informações:** Preencher First Name, Last Name e Zip Code. Clicar em "Continue".
@@ -211,7 +210,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Objetivo:** Validar a navegação para a página de detalhes de um item.
 * **Pré-requisitos:** Estar na página de inventário.
 * **Ações:**
-    1. Clicar no nome ou na imagem do produto "Sauce Labs Bolt T-Shirt".
+    1. Clicar no nome ou na imagem do produto "Sauce Labs Backpack".
 * **Resultado:** Abertura da página específica do produto com descrição detalhada, imagem ampliada e preço.
 * **Evidência:** ![detalhes](../Evidences/Images/screenshot-tc018-detalhes.png)
 
@@ -220,7 +219,7 @@ Este documento detalha o plano de testes para a interface web da plataforma **Sa
 * **Objetivo:** Validar o encerramento da sessão.
 * **Pré-requisitos:** Usuário logado.
 * **Ações:**
-    1. Clicar no menu lateral (hambúrguer).
+    1. Clicar no menu lateral.
     2. Clicar em "Logout".
 * **Resultado:** O usuário deve ser redirecionado para a página de login e não deve conseguir voltar às páginas internas pelo botão "voltar" do navegador.
 * **Evidência:** <video src="../Evidences/Videos/video-tc019-logout.mp4" controls></video>
